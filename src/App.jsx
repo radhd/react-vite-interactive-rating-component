@@ -10,11 +10,7 @@ function App() {
   };
   return (
     <div className="flex h-screen place-items-center bg-neutralVeryDarkBlue px-6">
-      {showThanks ? (
-        <Thanks onClick={handleClick} />
-      ) : (
-        <Notification onClick={handleClick} />
-      )}
+      {showThanks ? <Thanks /> : <Notification onClick={handleClick} />}
     </div>
   );
 }
