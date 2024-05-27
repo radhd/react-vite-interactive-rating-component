@@ -5,7 +5,7 @@ import OrangeButton from "./OrangeButton";
 
 function Notification() {
   return (
-    <div className="container space-y-6 rounded-lg bg-slate-800 p-6 text-white">
+    <div className="container mx-auto  max-w-96 space-y-6 rounded-lg  bg-slate-800 p-6 text-white">
       <RoundDiv imageIcon={<img src={StarIcon} alt="star" />} />
       <NotificationText
         titleText={"How did we do?"}
