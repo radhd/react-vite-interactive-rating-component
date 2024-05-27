@@ -4,7 +4,10 @@ import NotificationText from "./NotificationText";
 import OrangeButton from "./OrangeButton";
 import { useState } from "react";
 
-function Notification() {
+function Notification({ onClick }) {
+  const handleClick = () => {
+    onClick(true);
+  };
   const [active, setActive] = useState(-1);
 
   const handleItemClick = (index) => {
@@ -30,7 +33,7 @@ function Notification() {
           />
         ))}
       </div>
-      <OrangeButton btnText={"Submit"} />
+      <OrangeButton btnText={"Submit"} onClick={handleClick} />
     </div>
   );
 }
