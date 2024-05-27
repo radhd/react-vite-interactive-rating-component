@@ -4,7 +4,7 @@ import NotificationText from "./NotificationText";
 import OrangeButton from "./OrangeButton";
 import { useState } from "react";
 
-function Notification({ onClick }) {
+function Notification({ onClick, takeIndex }) {
   const handleClick = () => {
     onClick(true);
   };
@@ -12,6 +12,7 @@ function Notification({ onClick }) {
 
   const handleItemClick = (index) => {
     setActive(index);
+    takeIndex(index + 1);
   };
 
   return (
