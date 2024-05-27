@@ -2,8 +2,15 @@ import RoundDiv from "./RoundDiv";
 import StarIcon from "./assets/images/icon-star.svg";
 import NotificationText from "./NotificationText";
 import OrangeButton from "./OrangeButton";
+import { useState } from "react";
 
 function Notification() {
+  const [active, setActive] = useState(-1);
+
+  const handleItemClick = (index) => {
+    setActive(index);
+  };
+
   return (
     <div className="container mx-auto  max-w-96 space-y-6 rounded-lg  bg-slate-800 p-6 text-white">
       <RoundDiv imageIcon={<img src={StarIcon} alt="star" />} />
@@ -14,11 +21,14 @@ function Notification() {
         }
       />
       <div className="flex gap-4">
-        <RoundDiv number={<p>1</p>} />
-        <RoundDiv number={<p>2</p>} />
-        <RoundDiv number={<p>3</p>} />
-        <RoundDiv number={<p>4</p>} />
-        <RoundDiv number={<p>5</p>} />
+        {[1, 2, 3, 4, 5].map((num, index) => (
+          <RoundDiv
+            key={index}
+            number={<p>{num}</p>}
+            isActive={active === index}
+            onClick={() => handleItemClick(index)}
+          />
+        ))}
       </div>
       <OrangeButton btnText={"Submit"} />
     </div>
