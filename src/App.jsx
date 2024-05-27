@@ -2,7 +2,7 @@ import Text from "./Text";
 
 function App() {
   return (
-    <div className="">
+    <div>
       <Text />
     </div>
   );
